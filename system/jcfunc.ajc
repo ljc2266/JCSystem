@@ -1,0 +1,12 @@
+[BITS 32]
+[SECTION .text]
+	全局	_io_hlt,_write_mem8
+_io_hlt:
+	休
+	返
+
+_write_mem8:
+	移		高寄计,[高栈指+4]
+	移		寄加低,[高栈指+8]
+	移		[高寄计],寄加低
+	返
